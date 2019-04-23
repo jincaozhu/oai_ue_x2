@@ -18,17 +18,16 @@ Use this profile to instantiate an experiment using Open Air Interface
 to realize an end-to-end SDR-based mobile network. This profile includes
 the following resources:
 
-  * Off-the-shelf Nexus 5 UE running Android 4.4.4 KitKat ('rue1')
+  * SDR UE (Intel NUC + USRP B210) running OAI on Ubuntu 16 ('rue1')
   * SDR eNodeB (Intel NUC + USRP B210) running OAI on Ubuntu 16 ('enb1')
   * All-in-one EPC node (HSS, MME, SPGW) running OAI on Ubuntu 16 ('epc')
-  * A node providing out-of-band ADB access to the UE ('adb-tgt')
 
 PhantomNet startup scripts automatically configure OAI for the
 specific allocated resources.
 
 For more detailed information:
 
-  * [Getting Started](https://gitlab.flux.utah.edu/powder-profiles/OAI-Real-Hardware/blob/master/README.md)
+  * [Getting Started](https://gitlab.flux.utah.edu/jczhu/OAI_UE/blob/master/README.md)
 
 """;
 

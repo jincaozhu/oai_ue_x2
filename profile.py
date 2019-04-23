@@ -70,7 +70,7 @@ sudo /local/repository/bin/start_oai.pl
 
 4 run tdd ue in node `rue1`:
 
-cd  /opt/oai/openairinterface5g/targest/bin
+cd  /opt/oai/openairinterface5g/targets/bin
 
 sudo ./lte-softmodem.Rel14  -U -T -C 2350000000 --ue-txgain 70 --ue-rxgain 90 --ue-scan-carrier -r 25
 

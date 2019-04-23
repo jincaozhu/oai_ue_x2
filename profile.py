@@ -34,30 +34,45 @@ For more detailed information:
 
 tourInstructions = """
 After booting is complete,
-1 First you need to recompile eNB in node enb1:
+
+1 First you need to recompile eNB in node `enb1`:
 
 cd /opt/oai/openairinterface5g
-bash 
+
+bash
+
 source oaienv
+
 cd cmake_targets/
+
 sudo ./build_oai -c -C --eNB -w USRP
 
-2 recompile UE in node rue1:
+
+2 recompile UE in node `rue1`:
 
 cd /opt/oai/openairinterface5g
-bash 
+
+bash
+
 source oaienv
+
 cd ./cmake_targets/
+
 sudo ./build_oai -c -C --UE -w USRP
+
 cd ./tools/
+
 sudo ./init_nas_s1 UE
 
-3 run oai enb and EPC in node enb1
+
+3 run oai enb and EPC in node `enb1`
 
 sudo /local/repository/bin/start_oai.pl
 
-4 run tdd ue:
+4 run tdd ue in node `rue1`:
+
 cd  /opt/oai/openairinterface5g/targest/bin
+
 sudo ./lte-softmodem.Rel14  -U -T -C 2350000000 --ue-txgain 70 --ue-rxgain 90 --ue-scan-carrier -r 25
 
 

@@ -57,7 +57,7 @@ source oaienv
 
 cd ./cmake_targets/
 
-sudo ./build_oai -c -C --UE -w USRP # add -d for softscope
+sudo ./build_oai -c -C --UE -w USRP # add -x for softscope
 
 cd ./tools/
 

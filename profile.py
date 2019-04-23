@@ -34,25 +34,32 @@ For more detailed information:
 
 tourInstructions = """
 After booting is complete,
-For Simulated UE, log onto `epc` node and run:
+1 First you need to recompile eNB in node enb1:
 
-    sudo /local/repository/bin/start_oai.pl -r sim
+cd /opt/oai/openairinterface5g
+bash 
+source oaienv
+cd cmake_targets/
+sudo ./build_oai -c -C --eNB -w USRP
 
-Else, log onto either the `enb1` or `epc` nodes. From there, you will be able to start all OAI services across the network by running:
+2 recompile UE in node rue1:
 
-    sudo /local/repository/bin/start_oai.pl
+cd /opt/oai/openairinterface5g
+bash 
+source oaienv
+cd ./cmake_targets/
+sudo ./build_oai -c -C --UE -w USRP
+cd ./tools/
+sudo ./init_nas_s1 UE
 
-Above command will stop any currently running OAI services, start all services (both epc and enodeb) again, and then interactively show a tail of the logs of the mme and enodeb services. Once you see the logs, you can exit at any time with Ctrl-C, but the services stay running in the background and save logs to `/var/log/oai/*` on the `enb1` and `epc` nodes.
+3 run oai enb and EPC in node enb1
 
-Once all the services are running, the UE device will typically connect on its own, but if it doesn't you can reboot the phone. You can manage the UE by logging into the `adb-tgt` node, running `pnadb -a` to connect, and then managing it via any `adb` command such as `adb shell` or `adb reboot`.
+sudo /local/repository/bin/start_oai.pl
 
-For Simulated UE experiment, check the connectivity by logging into the `sim-enb` node and run:
+4 run tdd ue:
+cd  /opt/oai/openairinterface5g/targest/bin
+sudo ./lte-softmodem.Rel14  -U -T -C 2350000000 --ue-txgain 70 --ue-rxgain 90 --ue-scan-carrier -r 25
 
-    ping -I oip1 8.8.8.8
-
-While OAI is still a system in development and may be unstable, you can usually recover from any issue by running `start_oai.pl` to restart all the services.
-
-  * [Full Documentation](https://gitlab.flux.utah.edu/powder-profiles/OAI-Real-Hardware/blob/master/README.md)
 
 """;
 

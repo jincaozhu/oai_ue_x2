@@ -213,9 +213,9 @@ else:
 
 	
     # Create the RF link between the Nexus 5 UE and eNodeB
-    rflink2 = request.RFLink("rflink2")
-    rflink2.addInterface(enb1_rue1_rf)
-    rflink2.addInterface(rue1_enb1_rf)
+    rflink1 = request.RFLink("rflink2")
+    rflink1.addInterface(enb1_rue1_rf)
+    rflink1.addInterface(rue1_enb1_rf)
 
     # Create the RF link between the Nexus 5 UE and eNodeB
     rflink2 = request.RFLink("rflink2")

@@ -195,7 +195,7 @@ else:
     enb2.hardware_type = GLOBALS.NUC_HWTYPE
     enb2.disk_image = GLOBALS.OAI_ENB_IMG
     enb2.Desire( "rf-radiated" if params.TYPE == "ota" else "rf-controlled", 1 )
-    connectOAI_DS(enb1, 0)
+    connectOAI_DS(enb2, 0)
     enb2.addService(rspec.Execute(shell="sh", command=GLOBALS.OAI_CONF_SCRIPT + " -r ENB"))
     enb2_rue1_rf = enb2.addInterface("rue1_rf")
 	
